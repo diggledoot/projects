@@ -1,0 +1,3 @@
+Good Morning!
+This is the first Python workshop by School of ICT. 
+Today is going to be a fruitful day!Have a GOOD DAY!
