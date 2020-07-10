@@ -20,7 +20,9 @@ def main():
         windspeed = flask.request.form['windspeed']
         input_variables = pd.DataFrame([[temperature, humidity, windspeed]],columns=['temperature', 'humidity', 'windspeed'],dtype=float)
         pred = model.predict(input_variables)[0]
-        return flask.render_template('main.html',original_input={'Temperature':temperature,'Humidity':humidity,'Windspeed':windspeed},result=pred[0])
-
+        return flask.render_template('main.html',input={'Temperature':temperature,'Humidity':humidity,'Windspeed':windspeed},result=pred[0])
+@app.route("/test")
+def test():
+    return flask.render_template('test.html',message="In test html")
 if __name__=="__main__":
     app.run()
