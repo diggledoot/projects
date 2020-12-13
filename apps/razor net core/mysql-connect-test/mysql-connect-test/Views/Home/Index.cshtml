@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <form action="/Home/index" method="post">
+                <input type="text" name="name" class="form-control" placeholder="Enter an Item!" />
+                <input class="btn btn-primary mt-1" type="submit" name="Submit Item" />
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <button id="test" style="width:100%" class="btn btn-primary">Show data retrieved in console</button>
+        </div>
+        <div class="col-md-4">
+            <h1 id="result"></h1>
+        </div>
+    </div>
+
+    
+</div>
+

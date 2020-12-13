@@ -1,0 +1,146 @@
+[
+   {
+      "code":"ICT10001",
+      "desc":"Problem Solving with ICT",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"COS10005",
+      "desc":"Web Development",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"INF10003",
+      "desc":"Introduction to Business Information Systems",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"INF10002",
+      "desc":"Database Analysis and Design",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"COS10009",
+      "desc":"Introduction to Programming",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"INF30029",
+      "desc":"Information Technology Project Management",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"ICT30005",
+      "desc":"Professional Issues in Information Technology",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"ICT30001",
+      "desc":"Information Technology Project",
+      "pts":12.5,
+      "type":"Core"
+   },
+   {
+      "code":"COS20001",
+      "desc":"User-Centered Design",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"TNE10005",
+      "desc":"Network Administration",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"COS20016",
+      "desc":"Operating System Configuration",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"SWE20001",
+      "desc":"Development Project 1 - Tools and Practice",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"COS20007",
+      "desc":"Object Oriented Programming",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"COS30015",
+      "desc":"IT Security",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"COS30043",
+      "desc":"Interface Design and Development",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"COS30017",
+      "desc":"Software Development for Mobile Devices",
+      "pts":12.5,
+      "type":"Software Development"
+   },
+   {
+      "code":"INF20012",
+      "desc":"Enterprise Systems",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"ACC10007",
+      "desc":"Financial Information for Decision Making",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"INF20003",
+      "desc":"Requirements Analysis and Modeling",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"ACC20014",
+      "desc":"Management Decision Making",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"INF30005",
+      "desc":"Business Process Management",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"INF30003",
+      "desc":"Business Information Systems Analysis",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"INF30020",
+      "desc":"Information Systems Risk and Security",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   },
+   {
+      "code":"INF30001",
+      "desc":"Systems Acquisition & Implementation Management",
+      "pts":12.5,
+      "type":"Systems Analysis"
+   }
+]

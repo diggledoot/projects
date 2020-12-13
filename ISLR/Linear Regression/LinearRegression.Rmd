@@ -1,0 +1,69 @@
+# Load data
+```{r}
+data = read.csv("../data/Advertising.csv")
+head(data)
+```
+# Single Value Linear Regression
+## Estimating the coefficients
+
+We estimate using the least squares method, to be specific, Residual Sum of Squares(RSS). Residuals refer to the difference between actual and predicted value. The smaller the residuals, the better. The least squares approach aims to find coefficients $\hat{\beta}_0$ and $\hat{\beta}_1$ that provide the minimum RSS.
+
+Based on the Advertising dataset, the coefficients of $\hat{\beta}_0$ and $\hat{\beta}_1$ that return the smallest RSS is 7.03 and 0.0475. The linear equation would look like $Sales = 7.03 + 0.0475*TV$, remember to times by 1000, because thats the unit of measurement.So for every +1 to Tv, there is a sale of 0.0475 units OR for every $1000 to TV advertising is associated with the sale of 47.5 units of the product.
+
+```{r}
+round(tidy(lm(data$sales~data$TV))['estimate'],4)
+```
+
+## Confidence Interval
+It is used to determine whether or not to accpet or reject null hypothesis being whether there exists a relationship between X and Y.
+
+  $H_0 : \beta_1 = 0$
+  
+  $H_1 : \beta_1 \neq 0$
+  
+From the below output, it is seen there is an association between predictor and response, given the small p-value. Both $\beta_0$ and $\beta_1$ have p-value less than 0.05. Therefore, we can conclude that both predictors have a relationship with the reponse.
+  
+```{r}
+summary(lm(data$sales~data$TV))
+```
+Additional info: In the case of the advertising data, the 95% confidence interval for β0 is [6.130, 7.935] and the 95% confidence interval for β1 is [0.042, 0.053]. Therefore, we can conclude that in the absence of any advertising, sales will, on average, fall somewhere between 6,130 and 7,940 units. Furthermore, for each $1,000 increase in television advertising, there will be an average increase in sales of between 42 and 53 units.
+
+## Accuracy of the model
+
+Look at the RSE, $R^2$, and F-statistic area.
+```{r}
+library(broom)
+model = lm(data$sales~data$TV)
+message("RSE:",round(glance(model)$sigma,2))
+message("R.square:",round(glance(model)$r.squared,3))
+message("F-statistic:",round(glance(model)$statistic,1))
+```
+
+Residual Standard Error is average amount the model will deviate from the real line instead of the least fit line of the model. It also refers to lack of fit of model. In this case, 3.26 refers that the actual sales of the product is off by 3260 units on average. It provides a measure on the lack of fit of the model but not how accurate the model is.
+
+$R^2$ provides a better look. A $R^2$ value that is close to 1, is more accurate. In our case, a $R^2$ value of 0.612 means that 61.2% of the variability in sales is explained by the linear relationship(model) between sales and TV.
+
+F-statistic refers to if there is a effect of the predictor on the response. If the F-statistic is more than 1, that means that the predictor has some effect on the repsonse. In our case, the value 312.1, it can be said with confidence that TV budget has an effect on sales of product.In the case of Multiple Linear Regression, between predictors and response, if there is no relationship between at least one predictor and the response, a value of close to 1 will be shown for the F value.Otherwise, it will be greater than 1.
+
+# Multiple Linear Regression
+Having separate linear regression lines for each advertising media is problematic because it ignores the other two media and its effects on the sales, and unable to make a clear/singular prediction on sales using three separate regression models which give different responses.
+
+## Estimating predictor coefficients
+Same as Single Value Linear Regression, we use RSS.
+```{r}
+model = lm(data$sales~data$TV+data$radio+data$newspaper)
+tidy(model)
+```
+```{r}
+round(cor(data),2)
+```
+
+Even though newspaper has no effect on increasing sales, it is seen that advertising budgets for newspaper and radio is correlated. That means that an increase in radio budget leads to an increase in newspaper budget. Since investing radio increases sales, and since both radio and newspaper are correlated, indirectly, newspaper increases sales due to its correlation with radio.
+
+```{r}
+glance(model)$statistic
+```
+
+The F-statistic indicates that there is a relationship between at least one predictor and the response because it is greater than 1,significantly. However, the F statistic depends on the number of observations(n) and predictors(p).When n is large, an F-statistic that is just a little larger than 1 might still provide evidence against $H_0$ and vice versa.
+
+## Variable Selection
